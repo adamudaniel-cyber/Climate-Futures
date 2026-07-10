@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220" width="100%" height="auto" style="background: var(--bg-cream); border: 1px solid var(--rule); padding: 0.5rem; box-sizing: border-box;" class="editorial-diagram">
+    <!-- Grid Lines -->
+    <line x1="40" y1="40" x2="390" y2="40" stroke="rgba(0,0,0,0.06)" stroke-width="1" />
+    <line x1="40" y1="90" x2="390" y2="90" stroke="rgba(0,0,0,0.06)" stroke-width="1" />
+    <line x1="40" y1="140" x2="390" y2="140" stroke="rgba(0,0,0,0.06)" stroke-width="1" />
+    <line x1="40" y1="190" x2="390" y2="190" stroke="rgba(0,0,0,0.06)" stroke-width="1" />
+
+    <!-- Y-Axis Labels -->
+    <text x="32" y="43" text-anchor="end" font-family="var(--font-mono)" font-size="8" fill="var(--text-muted)">+4.0°C</text>
+    <text x="32" y="93" text-anchor="end" font-family="var(--font-mono)" font-size="8" fill="var(--text-muted)">+2.5°C</text>
+    <text x="32" y="143" text-anchor="end" font-family="var(--font-mono)" font-size="8" fill="var(--text-muted)">+1.0°C</text>
+    <text x="32" y="193" text-anchor="end" font-family="var(--font-mono)" font-size="8" fill="var(--text-muted)">0.0°C</text>
+
+    <!-- X-Axis Labels -->
+    <text x="40" y="208" text-anchor="middle" font-family="var(--font-body)" font-size="8" fill="var(--text-muted)">Year 0</text>
+    <text x="130" y="208" text-anchor="middle" font-family="var(--font-body)" font-size="8" fill="var(--text-muted)">Year 10</text>
+    <text x="220" y="208" text-anchor="middle" font-family="var(--font-body)" font-size="8" fill="var(--text-muted)">Year 20</text>
+    <text x="310" y="208" text-anchor="middle" font-family="var(--font-body)" font-size="8" fill="var(--text-muted)">Year 30</text>
+    <text x="385" y="208" text-anchor="middle" font-family="var(--font-body)" font-size="8" fill="var(--text-muted)">Year 40</text>
+
+    <!-- Uncertainty Envelope -->
+    <path d="M 40 140 Q 130 110 220 70 T 390 35 L 390 195 T 220 170 Q 130 155 40 140 Z" fill="rgba(27, 58, 107, 0.04)" stroke="none" />
+    <text x="210" y="55" font-family="var(--font-body)" font-size="8.5" font-style="italic" fill="var(--accent-mid)" opacity="0.6">95% Uncertainty Envelope</text>
+
+    <!-- Jittery Individual Simulated Paths -->
+    <path d="M 40 140 L 80 135 L 120 142 L 160 130 L 200 120 L 240 128 L 280 110 L 320 95 L 360 102 L 390 85" fill="none" stroke="rgba(138, 168, 212, 0.2)" stroke-width="1" />
+    <path d="M 40 140 L 80 145 L 120 138 L 160 148 L 200 140 L 240 152 L 280 145 L 320 160 L 360 150 L 390 168" fill="none" stroke="rgba(138, 168, 212, 0.2)" stroke-width="1" />
+    <path d="M 40 140 L 80 125 L 120 118 L 160 110 L 200 95 L 240 105 L 280 85 L 320 72 L 360 55 L 390 48" fill="none" stroke="rgba(138, 168, 212, 0.2)" stroke-width="1" />
+
+    <!-- 95th Percentile Path (Dashed) -->
+    <path d="M 40 140 Q 130 110 220 75 T 390 42" fill="none" stroke="#8AA8D4" stroke-width="1.5" stroke-dasharray="4,3" />
+    <text x="320" y="35" font-family="var(--font-body)" font-size="8" fill="var(--accent-mid)">95th Percentile</text>
+
+    <!-- Median Path (Solid Green) -->
+    <path d="M 40 140 Q 130 130 220 110 T 390 98" fill="none" stroke="#5BAD8B" stroke-width="2.5" />
+    <text x="320" y="93" font-family="var(--font-body)" font-size="8" font-weight="bold" fill="#5BAD8B">Median Pathway (+2.1°C)</text>
+
+    <!-- Origin Dot -->
+    <circle cx="40" cy="140" r="3.5" fill="var(--accent)" />
+    
+    <!-- Axes lines -->
+    <line x1="40" y1="30" x2="40" y2="190" stroke="var(--rule-strong)" stroke-width="1.2" />
+    <line x1="40" y1="190" x2="390" y2="190" stroke="var(--rule-strong)" stroke-width="1.2" />
+</svg>

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 160" width="100%" height="auto" style="background: var(--bg-cream); border: 1px solid var(--rule); padding: 0.75rem; box-sizing: border-box;" class="editorial-diagram">
+    <defs>
+        <marker id="arrow-sm" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M 0 2 L 8 5 L 0 8 z" fill="var(--accent)" />
+        </marker>
+    </defs>
+    <!-- Node 1: Inputs -->
+    <rect x="10" y="10" width="160" height="40" rx="2" fill="var(--bg-white)" stroke="var(--accent)" stroke-width="1.2" />
+    <text x="90" y="24" text-anchor="middle" font-family="var(--font-body)" font-size="9" font-weight="bold" fill="var(--text-primary)">1. Historical Climate Data</text>
+    <text x="90" y="34" text-anchor="middle" font-family="var(--font-body)" font-size="7.5" fill="var(--text-muted)">Temperature &amp; Precipitation</text>
+
+    <!-- Arrow 1 to Node 2 -->
+    <line x1="90" y1="50" x2="90" y2="70" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#arrow-sm)" />
+
+    <!-- Node 2: HMM Volatility -->
+    <rect x="10" y="70" width="160" height="45" rx="2" fill="var(--bg-white)" stroke="var(--accent)" stroke-width="1.2" />
+    <text x="90" y="84" text-anchor="middle" font-family="var(--font-body)" font-size="9" font-weight="bold" fill="var(--text-primary)">2. Volatility Analysis (HMM)</text>
+    <text x="90" y="94" text-anchor="middle" font-family="var(--font-body)" font-size="7.5" fill="var(--text-muted)">Markov Transitions: Low vs High Vol</text>
+
+    <!-- Arrow 2 to Node 3 -->
+    <line x1="170" y1="92" x2="210" y2="92" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#arrow-sm)" />
+
+    <!-- Node 3: Parameters -->
+    <rect x="210" y="10" width="180" height="50" rx="2" fill="var(--bg-white)" stroke="var(--accent)" stroke-width="1.2" />
+    <text x="300" y="24" text-anchor="middle" font-family="var(--font-body)" font-size="9" font-weight="bold" fill="var(--text-primary)">3. Parameter Estimation</text>
+    <text x="300" y="34" text-anchor="middle" font-family="var(--font-mono)" font-size="8" fill="var(--accent-mid)">MLE &amp; Volatility (σ_1, σ_2)</text>
+    <text x="300" y="44" text-anchor="middle" font-family="var(--font-body)" font-size="7.5" fill="var(--text-muted)">Maximum Likelihood Estimation</text>
+
+    <!-- Arrow 3 to Node 4 -->
+    <line x1="300" y1="60" x2="300" y2="85" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#arrow-sm)" />
+
+    <!-- Node 4: Dynamics -->
+    <rect x="210" y="85" width="180" height="50" rx="2" fill="var(--bg-white)" stroke="var(--accent)" stroke-width="1.2" />
+    <text x="300" y="98" text-anchor="middle" font-family="var(--font-body)" font-size="9" font-weight="bold" fill="var(--text-primary)">4. Stochastic Dynamics</text>
+    <text x="300" y="108" text-anchor="middle" font-family="var(--font-mono)" font-size="7.5" fill="var(--accent-mid)">Euler-Maruyama Integration</text>
+    <text x="300" y="118" text-anchor="middle" font-family="var(--font-body)" font-size="7" fill="var(--text-muted)">Monte Carlo Simulation Paths</text>
+
+    <!-- HMM connection back to Node 3 -->
+    <path d="M 90 115 L 90 145 L 300 145 L 300 135" fill="none" stroke="var(--accent-mid)" stroke-width="1" stroke-dasharray="3,2" />
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 150" width="100%" height="auto" style="background: var(--bg-cream); border: 1px solid var(--rule); padding: 0.75rem; box-sizing: border-box;" class="editorial-diagram">
+    <defs>
+        <marker id="arrow-sm-3" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M 0 2 L 8 5 L 0 8 z" fill="var(--accent)" />
+        </marker>
+    </defs>
+    <!-- Step 1 -->
+    <rect x="10" y="10" width="110" height="50" rx="2" fill="var(--bg-white)" stroke="var(--accent)" stroke-width="1" />
+    <text x="65" y="24" text-anchor="middle" font-family="var(--font-body)" font-size="9" font-weight="bold" fill="var(--text-primary)">STEP 1</text>
+    <text x="65" y="36" text-anchor="middle" font-family="var(--font-body)" font-size="8" fill="var(--text-primary)">Data Prep</text>
+    <text x="65" y="46" text-anchor="middle" font-family="var(--font-body)" font-size="7" fill="var(--text-muted)">netCDF / CSV Parsing</text>
+
+    <!-- Arrow 1-2 -->
+    <line x1="120" y1="35" x2="140" y2="35" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#arrow-sm-3)" />
+
+    <!-- Step 2 -->
+    <rect x="140" y="10" width="110" height="50" rx="2" fill="var(--bg-white)" stroke="var(--accent)" stroke-width="1" />
+    <text x="195" y="24" text-anchor="middle" font-family="var(--font-body)" font-size="9" font-weight="bold" fill="var(--text-primary)">STEP 2</text>
+    <text x="195" y="36" text-anchor="middle" font-family="var(--font-body)" font-size="8" fill="var(--text-primary)">Regime Inference</text>
+    <text x="195" y="46" text-anchor="middle" font-family="var(--font-body)" font-size="7" fill="var(--text-muted)">Baum-Welch (EM)</text>
+
+    <!-- Arrow 2-3 -->
+    <line x1="250" y1="35" x2="270" y2="35" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#arrow-sm-3)" />
+
+    <!-- Step 3 -->
+    <rect x="270" y="10" width="120" height="50" rx="2" fill="var(--bg-white)" stroke="var(--accent)" stroke-width="1" />
+    <text x="330" y="24" text-anchor="middle" font-family="var(--font-body)" font-size="9" font-weight="bold" fill="var(--text-primary)">STEP 3</text>
+    <text x="330" y="36" text-anchor="middle" font-family="var(--font-body)" font-size="8" fill="var(--text-primary)">Path Integration</text>
+    <text x="330" y="46" text-anchor="middle" font-family="var(--font-body)" font-size="7" fill="var(--text-muted)">Euler-Maruyama Sim</text>
+
+    <!-- Arrow 3-4 (Downwards) -->
+    <line x1="330" y1="60" x2="330" y2="85" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#arrow-sm-3)" />
+
+    <!-- Step 4 -->
+    <rect x="210" y="85" width="180" height="50" rx="2" fill="var(--bg-white)" stroke="var(--accent)" stroke-width="1" />
+    <text x="300" y="98" text-anchor="middle" font-family="var(--font-body)" font-size="9" font-weight="bold" fill="var(--text-primary)">STEP 4: Output Synthesis</text>
+    <text x="300" y="110" text-anchor="middle" font-family="var(--font-body)" font-size="8" fill="var(--accent-mid)">Probability Plume &amp; Risk Metrics</text>
+    <text x="300" y="120" text-anchor="middle" font-family="var(--font-body)" font-size="7" fill="var(--text-muted)">VaR / Expected Shortfall Calculation</text>
+</svg>

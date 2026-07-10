@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Futures: A Monte Carlo and Regime-Switching Framework</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Climate Futures is an open research initiative that develops advanced statistical models capable of generating thousands of realistic climate scenarios.">
+    <meta name="keywords"
+        content="Climate change, Stochastic Modeling, Monte Carlo, Regime-Switching, Daniel Adamu, University of Jos">
+    <meta name="author" content="Daniel Adamu">
+    <link rel="stylesheet" id="theme-stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Reading Progress Indicator -->
+    <div id="reading-progress"></div>
+    <!-- Masthead Header -->
+    <header class="site-header" id="main-header">
+        <div class="header-inner">
+            <div class="header-info">
+                <a href="#welcome" class="masthead-title">Climate Futures</a>
+                <span class="masthead-tagline">A Monte Carlo &amp; Regime-Switching Framework</span>
+            </div>
+
+            <!-- Desktop nav -->
+            <nav class="nav-row" aria-label="Site navigation" id="nav-row">
+                <a href="#welcome" class="nav-link">Home</a>
+                <span class="nav-pipe" aria-hidden="true">|</span>
+                <a href="#about" class="nav-link">About</a>
+            </nav>
+
+            <!-- Mobile toggle -->
+            <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation menu"
+                aria-expanded="false">Menu</button>
+        </div>
+    </header>
+
+    <!-- Mobile Dropdown Menu -->
+    <div class="mobile-dropdown" id="mobile-dropdown" role="dialog" aria-modal="true" aria-label="Navigation">
+        <a href="#welcome" class="mobile-nav-link" data-dropdown-link>Home</a>
+        <a href="#about" class="mobile-nav-link" data-dropdown-link>About</a>
+        <hr class="dropdown-divider">
+        <a href="#welcome-intro" class="mobile-nav-link sub-link" data-dropdown-link>Introduction</a>
+        <a href="#about" class="mobile-nav-link sub-link" data-dropdown-link>About Project</a>
+        <a href="#why" class="mobile-nav-link sub-link" data-dropdown-link>Why Climate Futures</a>
+        <a href="#how-it-works" class="mobile-nav-link sub-link" data-dropdown-link>How It Works</a>
+        <a href="#objectives" class="mobile-nav-link sub-link" data-dropdown-link>Objectives</a>
+        <a href="#methodology" class="mobile-nav-link sub-link" data-dropdown-link>Methodology</a>
+        <a href="#results" class="mobile-nav-link sub-link" data-dropdown-link>Results</a>
+        <a href="#impact" class="mobile-nav-link sub-link" data-dropdown-link>Impact</a>
+        <a href="#status" class="mobile-nav-link sub-link" data-dropdown-link>Status &amp; Future</a>
+        <a href="#acknowledgements" class="mobile-nav-link sub-link" data-dropdown-link>Acknowledgements</a>
+        <a href="#researcher" class="mobile-nav-link sub-link" data-dropdown-link>The Researcher</a>
+        <hr class="dropdown-divider">
+        <div class="mobile-reader-settings">
+            <div class="mobile-settings-title">Reading Style</div>
+            <div class="mobile-settings-controls">
+                <div class="mobile-control-item">
+                    <span>Text Size</span>
+                    <div class="btn-group">
+                        <button id="btn-dec-font-mob" aria-label="Decrease text size">A−</button>
+                        <button id="btn-inc-font-mob" aria-label="Increase text size">A+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Table of Contents / Side Navigation Panel -->
+    <aside class="side-panel-nav" aria-label="Table of contents">
+        <div class="side-panel-title">Sections</div>
+        <ul class="side-panel-list">
+            <li><a href="#welcome" class="side-nav-link active">Welcome</a></li>
+            <li><a href="#welcome-intro" class="side-nav-link">Introduction</a></li>
+            <li><a href="#about" class="side-nav-link">About Project</a></li>
+            <li><a href="#why" class="side-nav-link">Why Climate Futures</a></li>
+            <li><a href="#how-it-works" class="side-nav-link">How It Works</a></li>
+            <li><a href="#objectives" class="side-nav-link">Objectives</a></li>
+            <li><a href="#methodology" class="side-nav-link">Methodology</a></li>
+            <li><a href="#results" class="side-nav-link">Results</a></li>
+            <li><a href="#impact" class="side-nav-link">Impact</a></li>
+            <li><a href="#status" class="side-nav-link">Status &amp; Future</a></li>
+            <li><a href="#acknowledgements" class="side-nav-link">Acknowledgements</a></li>
+            <li><a href="#researcher" class="side-nav-link">The Researcher</a></li>
+        </ul>
+        <div class="side-panel-title" style="margin-top: 1.25rem;">Reading Style</div>
+        <div class="reader-settings-panel">
+            <div class="settings-row">
+                <span class="settings-label">Text Size</span>
+                <div class="btn-group">
+                    <button class="settings-btn" id="btn-dec-font" aria-label="Decrease text size">A−</button>
+                    <button class="settings-btn" id="btn-inc-font" aria-label="Increase text size">A+</button>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="book-cover-container" id="hero-book-cover">
+        <div class="book-cover-sticky">
+            <section class="hero-section" id="welcome">
+                <div class="hero-inner">
+                    <div class="hero-data-col reveal">
+                        <div class="hero-data-card">
+                            <!-- <div class="data-card-label">Live Simulation Engine</div> -->
+                            <!-- <div class="data-chart-area" aria-hidden="true">
+                                <canvas id="hero-visual-canvas"></canvas>
+                            </div> -->
+                            <img src="images/conceptual_framework.png" alt="">
+                        </div>
+                    </div>
+
+                    <h1 class="hero-headline reveal"
+                        style="font-size: clamp(2rem, 3.5vw, 3.25rem); line-height: 1.2; max-width: 850px; text-transform: none;">
+                        Climate Futures: Monte Carlo and Regime-Switching Framework for Smarter Climate Scenario
+                        Analysis
+                    </h1>
+
+                    <div class="hero-deck-col reveal">
+                        <p class="hero-deck"
+                            style="max-width: 650px; font-style: normal; border-left: 3px solid var(--accent-mid); padding-left: 1.25rem;">
+                            Developed from the postgraduate research:<br>
+                            <span style="font-style: italic; color: var(--text-inverse); opacity: 0.9;">
+                                "Monte Carlo and Regime-Switching Models for Global Climate Change Scenario Analysis and
+                                Sustainable Decision-Making"
+                            </span>
+                        </p>
+                        <!-- <div class="hero-cta" style="margin-top: 2rem;">
+                            <a href="#welcome-intro" class="btn-primary-ed">Explore the Research</a>
+                        </div> -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================================================================
+                 WELCOME INTRODUCTION
+                 =================================================================== -->
+            <section class="about-section" id="welcome-intro" style="border-bottom: 1px solid var(--rule);">
+                <div class="about-grid">
+                    <div class="about-text reveal">
+                        <hr class="section-intro-rule">
+                        <h2 class="section-heading">Introduction</h2>
+                        <p class="lede">
+                            Climate Futures is an open research initiative that develops advanced statistical models
+                            capable of generating thousands of realistic climate scenarios.
+                        </p>
+                        <p class="body-text">
+                            By combining historical climate observations with Monte Carlo simulation and
+                            Regime-Switching models, the project helps transform climate uncertainty into practical
+                            knowledge that supports evidence-based planning and sustainable decision-making.
+                        </p>
+                        <p class="body-text">
+                            Rather than predicting one future, Climate Futures explores many possible futures, helping
+                            decision-makers better understand climate risks, uncertainty, and resilience.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- ===================================================================
+         ABOUT THE PROJECT
+         =================================================================== -->
+    <section class="about-section" id="about">
+        <div class="about-grid">
+            <div class="about-text reveal">
+                <hr class="section-intro-rule">
+                <h2 class="section-heading">About the Project</h2>
+                <p class="lede">
+                    <strong>Understanding Climate Uncertainty Through Advanced Statistical Modeling</strong><br>
+                    Climate Futures is an innovative research initiative designed to improve the way climate uncertainty
+                    is analyzed and communicated.
+                </p>
+                <p class="body-text">
+                    Traditional climate forecasts often provide a single projected outcome. However, the climate system
+                    is complex and influenced by many interacting factors that can change unexpectedly.
+                </p>
+                <p class="body-text">
+                    Climate Futures addresses this challenge by combining advanced stochastic modeling with Monte Carlo
+                    simulation to generate thousands of plausible climate scenarios. This probabilistic approach
+                    provides a more comprehensive understanding of future climate conditions and supports informed
+                    planning under uncertainty.
+                </p>
+                <p class="body-text">
+                    The project was developed from postgraduate research in Statistics and demonstrates how modern
+                    statistical methods can contribute to climate resilience, sustainability, and evidence-based
+                    environmental decision-making.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+         WHY CLIMATE FUTURES?
+         =================================================================== -->
+    <section class="impact-section" id="why">
+        <div class="about-grid reveal">
+            <div class="about-text">
+                <hr class="section-intro-rule">
+                <h2 class="section-heading">Why Climate Futures?</h2>
+                <p class="lede">Climate uncertainty affects everyone.</p>
+                <p class="body-text">
+                    Whether planning cities, protecting agriculture, managing water resources, or preparing for
+                    disasters, decisions made today depend on understanding tomorrow's climate.
+                </p>
+                <p class="body-text">Climate Futures helps answer questions such as:</p>
+                <ul class="body-text" style="list-style-type: disc; padding-left: 2rem; margin-bottom: 1.5rem;">
+                    <li>How uncertain is the future climate?</li>
+                    <li>What extreme climate conditions are possible?</li>
+                    <li>How can uncertainty be measured?</li>
+                    <li>How can statistical models improve climate planning?</li>
+                    <li>How can simulation support sustainable development?</li>
+                </ul>
+                <p class="body-text">
+                    Instead of relying on one forecast, Climate Futures explores thousands of possible futures, allowing
+                    better preparation for uncertainty.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+         HOW IT WORKS
+         =================================================================== -->
+    <section class="subpage-content grid-section" id="how-it-works">
+        <div class="grid-layout reveal">
+            <div class="grid-text">
+                <h2 class="section-heading">How It Works</h2>
+                <p class="body-text">Climate Futures combines historical climate observations with modern statistical
+                    techniques through the following steps:</p>
+                <ol class="body-text" style="list-style-type: decimal; padding-left: 2rem; margin-bottom: 2rem;">
+                    <li>Collection of global climate data.</li>
+                    <li>Data cleaning and preprocessing.</li>
+                    <li>Detection of hidden climate regimes using Hidden Markov Models.</li>
+                    <li>Climate dynamics modeled using Regime-Switching Geometric Brownian Motion.</li>
+                    <li>Generation of thousands of future climate scenarios using Monte Carlo simulation.</li>
+                    <li>Analysis of uncertainty, risk, and climate variability.</li>
+                    <li>Production of decision-support information for sustainable planning.</li>
+                </ol>
+            </div>
+            <div class="grid-visual">
+                <figure class="ed-figure">
+                    <img src="images/illusstration_1.png"
+                        alt="Illustration 1: Conceptual Framework showing climate variable flow through HMM regimes to output probabilistic metrics."
+                        style="background: var(--bg-cream); border: 1px solid var(--rule); padding: 1.25rem; box-sizing: border-box; width: 100%; height: auto;"
+                        class="editorial-diagram">
+                    <figcaption class="ed-caption">Illustration 1: Conceptual Framework showing climate variable flow
+                        through HMM regimes to output probabilistic metrics.</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+         RESEARCH OBJECTIVES (Zigzag - Text Left, Visual Right)
+         =================================================================== -->
+    <section class="impact-section grid-section" id="objectives">
+        <div class="grid-layout reveal">
+            <div class="grid-text">
+                <h2 class="section-heading">Research Objectives</h2>
+                <p class="body-text">The research has successfully achieved the following key milestones:</p>
+                <ul class="body-text" style="list-style-type: disc; padding-left: 2rem; margin-bottom: 1.5rem;">
+                    <li><strong>Developed</strong> an innovative probabilistic framework for climate scenario analysis.
+                    </li>
+                    <li><strong>Improved</strong> the mathematical representation of climate uncertainty.</li>
+                    <li><strong>Simulated</strong> thousands of consistent future climate pathways.</li>
+                    <li><strong>Quantified</strong> climate risks and volatility shifts using advanced statistical
+                        methods.</li>
+                    <li><strong>Supported</strong> evidence-based climate adaptation and resilience planning.</li>
+                    <li><strong>Promoted</strong> sustainable decision-making through open scientific research.</li>
+                </ul>
+            </div>
+            <div class="grid-visual">
+                <div class="objectives-visual-box">
+                    <span class="math-formula"><i>dS<sub>t</sub></i> = <i>&mu;<sub>t</sub></i> <i>S<sub>t</sub></i>
+                        <i>dt</i> + <i>&sigma;<sub>t</sub></i> <i>S<sub>t</sub></i> <i>dW<sub>t</sub></i></span>
+                    <span class="visual-label">Stochastic Regime-Switching Model</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+         METHODOLOGY (Zigzag - Visual Left, Text Right)
+         =================================================================== -->
+    <section class="subpage-content grid-section" id="methodology">
+        <div class="grid-layout-3col grid-layout-3col-wide reveal">
+            <div class="grid-visual-left">
+                <figure class="ed-figure">
+                    <img src="images/illusstration_2.png"
+                        alt="Illustration 2: Model Flow Diagram representing the mathematical calibration and HMM regime switches."
+                        style="background: var(--bg-cream); border: 1px solid var(--rule); padding: 0.75rem; box-sizing: border-box; width: 100%; height: auto;"
+                        class="editorial-diagram">
+                    <figcaption class="ed-caption">Illustration 2: Model Flow Diagram representing the mathematical
+                        calibration and HMM regime switches.</figcaption>
+                </figure>
+            </div>
+            <div class="grid-text-middle">
+                <h2 class="section-heading">Methodology</h2>
+                <p class="body-text">Climate Futures integrates several advanced statistical methods:</p>
+                <ul class="body-text" style="list-style-type: disc; padding-left: 2rem; margin-bottom: 2rem;">
+                    <li>Historical Climate Data</li>
+                    <li>Hidden Markov Models (HMM)</li>
+                    <li>Regime-Switching Geometric Brownian Motion (RS-GBM)</li>
+                    <li>Monte Carlo Simulation</li>
+                    <li>Euler-Maruyama Numerical Approximation</li>
+                    <li>Maximum Likelihood Estimation</li>
+                    <li>Risk Metrics (Value-at-Risk and Expected Shortfall)</li>
+                </ul>
+                <p class="body-text">These methods work together to generate thousands of statistically consistent
+                    climate scenarios.</p>
+            </div>
+            <div class="grid-visual-right">
+                <figure class="ed-figure">
+                    <img src="images/illusstration_3.png"
+                        alt="Illustration 3: Computational Simulation Framework showing the sequential pipeline steps."
+                        style="background: var(--bg-cream); border: 1px solid var(--rule); padding: 0.75rem; box-sizing: border-box; width: 100%; height: auto;"
+                        class="editorial-diagram">
+                    <figcaption class="ed-caption">Illustration 3: Computational Simulation Framework showing the
+                        sequential pipeline steps.</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+         RESULTS
+         =================================================================== -->
+    <section class="impact-section grid-section" id="results">
+        <div class="grid-layout large-visual reveal">
+            <div class="grid-text">
+                <h2 class="section-heading">Results</h2>
+                <p class="body-text">
+                    The framework demonstrates how probabilistic climate modeling provides richer insights than
+                    traditional deterministic forecasts.
+                </p>
+                <p class="body-text">Key outputs include:</p>
+                <ul class="body-text" style="list-style-type: disc; padding-left: 2rem; margin-bottom: 1.5rem;">
+                    <li>Thousands of simulated climate futures.</li>
+                    <li>Climate uncertainty estimates.</li>
+                    <li>Extreme-event probabilities.</li>
+                    <li>Risk metrics.</li>
+                    <li>Scenario distributions.</li>
+                    <li>Climate regime probabilities.</li>
+                </ul>
+                <p class="body-text">
+                    These results help users better understand both expected climate trends and potential extreme
+                    outcomes.
+                </p>
+            </div>
+            <div class="grid-visual">
+                <figure class="ed-figure">
+                    <img src="images/illusstration_4.png"
+                        alt="Illustration 4: Monte Carlo Path Plume representing future climate temperature scenarios."
+                        style="background: var(--bg-cream); border: 1px solid var(--rule); padding: 0.5rem; box-sizing: border-box; width: 100%; height: auto;"
+                        class="editorial-diagram">
+                    <figcaption class="ed-caption">Illustration 4: Monte Carlo Path Plume representing future climate
+                        temperature scenarios.</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+         IMPACT
+         =================================================================== -->
+    <section class="subpage-content grid-section" id="impact">
+        <div class="grid-layout large-visual reveal">
+            <div class="grid-text">
+                <h2 class="section-heading">Impact</h2>
+                <p class="body-text">Climate Futures supports:</p>
+                <ul class="body-text" style="list-style-type: none; margin-bottom: 1.5rem; padding-left: 0;">
+                    <li>✓ Climate Adaptation</li>
+                    <li>✓ Sustainable Cities</li>
+                    <li>✓ Agriculture</li>
+                    <li>✓ Water Resource Planning</li>
+                    <li>✓ Energy System Planning</li>
+                    <li>✓ Disaster Risk Reduction</li>
+                    <li>✓ Climate Education</li>
+                    <li>✓ Sustainable Development Goals (SDGs)</li>
+                </ul>
+                <p class="body-text">The project contributes particularly to:</p>
+                <ul class="body-text" style="list-style-type: disc; padding-left: 2rem; margin-bottom: 2rem;">
+                    <li>SDG 13 - Climate Action</li>
+                    <li>SDG 11 - Sustainable Cities and Communities</li>
+                    <li>SDG 7 - Affordable and Clean Energy</li>
+                    <li>SDG 2 - Zero Hunger</li>
+                </ul>
+            </div>
+            <div class="grid-visual">
+                <figure class="ed-figure">
+                    <img src="images/illusstration_5.png"
+                        alt="Illustration 5: Climate Decision Support &amp; SDG Impact Infographic."
+                        style="background: var(--bg-cream); border: 1px solid var(--rule); padding: 0.75rem; box-sizing: border-box; width: 100%; height: auto;"
+                        class="editorial-diagram">
+                    <figcaption class="ed-caption">Illustration 5: Climate Decision Support &amp; SDG Impact
+                        Infographic.</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+         PROJECT STATUS & FUTURE DEVELOPMENT (Creative Styling Overhaul)
+         =================================================================== -->
+    <section class="creative-status-section" id="status">
+        <div class="container-wide reveal">
+            <div class="creative-grid">
+                <!-- Status Card -->
+                <div class="creative-card status-card">
+                    <h2 class="creative-card-title">Project Status</h2>
+                    <div class="status-list">
+                        <div class="status-item done">
+                            <span class="status-icon">✓</span>
+                            <span class="status-text">Research Completed</span>
+                        </div>
+                        <div class="status-item done">
+                            <span class="status-icon">✓</span>
+                            <span class="status-text">Statistical Framework Developed</span>
+                        </div>
+                        <div class="status-item done">
+                            <span class="status-icon">✓</span>
+                            <span class="status-text">Climate Simulations Completed</span>
+                        </div>
+                        <div class="status-item done">
+                            <span class="status-icon">✓</span>
+                            <span class="status-text">Results Validated</span>
+                        </div>
+                        <div class="status-item in-progress">
+                            <span class="status-icon-progress">⟳</span>
+                            <span class="status-text">Public dissemination &amp; educational resources under
+                                development.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Future Card -->
+                <div class="creative-card future-card">
+                    <h2 class="creative-card-title">Future Development</h2>
+                    <p class="creative-card-intro">Future phases of Climate Futures include:</p>
+                    <div class="future-grid">
+                        <div class="future-item">
+                            <div class="future-badge">Dashboards</div>
+                            <p class="future-text">Interactive climate dashboards</p>
+                        </div>
+                        <div class="future-item">
+                            <div class="future-badge">Simulation</div>
+                            <p class="future-text">Open-source simulation tools</p>
+                        </div>
+                        <div class="future-item">
+                            <div class="future-badge">Education</div>
+                            <p class="future-text">Educational resources</p>
+                        </div>
+                        <div class="future-item">
+                            <div class="future-badge">Visualization</div>
+                            <p class="future-text">Climate visualization platform</p>
+                        </div>
+                        <div class="future-item">
+                            <div class="future-badge">Collaboration</div>
+                            <p class="future-text">Research collaborations</p>
+                        </div>
+                        <div class="future-item">
+                            <div class="future-badge">Data Portal</div>
+                            <p class="future-text">Public climate data portal</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+         ACKNOWLEDGEMENTS (Centered Text, White Background)
+         =================================================================== -->
+    <section class="acknowledgements-centered-section" id="acknowledgements">
+        <div class="centered-container reveal">
+            <h2 class="centered-heading">Acknowledgements</h2>
+            <p class="centered-body">
+                Climate Futures is an independent research initiative developed from postgraduate research in
+                Statistics. The project aims to advance climate scenario analysis while promoting open science,
+                sustainable development, and evidence-based climate decision-making.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+         THE RESEARCHER (Merged with Contact Section)
+         =================================================================== -->
+    <div class="book-cover-container" id="footer-book-cover">
+        <div class="book-cover-sticky">
+            <section class="researcher-merged-section" id="researcher">
+                <div class="researcher-grid reveal">
+                    <!-- Left Column: Bio & Qualifications -->
+                    <div class="researcher-bio-col">
+                        <h2 class="section-heading">The Researcher</h2>
+                        <p class="lede"><strong>Daniel Adamu</strong></p>
+                        <p class="body-text">
+                            Daniel Adamu is a researcher, lecturer, and actuarial specialist with multidisciplinary
+                            expertise in statistics, stochastic modeling, risk analysis, and sustainable development.
+                            His academic and professional qualifications include a BSc in Mathematics, an MSc in
+                            Actuarial Science, an MSc in Leadership Studies, an MSc in International Relations and
+                            Diplomatic Studies (in view), a PGD in Education, a Diploma in French Language, and a PhD in
+                            Statistics (in view).
+                        </p>
+                        <p class="body-text">
+                            Daniel lectures in Actuarial Science at the University of Jos, Nigeria, and previously
+                            taught at Kampala International University. Before academia, he held technical and risk
+                            roles in insurance. A Fellow of several institutes, he presents research across Africa and
+                            Asia.
+                        </p>
+                        <p class="body-text">
+                            His research spans stochastic modeling, Monte Carlo simulation, climate scenario analysis,
+                            and pension systems. Through Climate Futures, he develops open tools making advanced climate
+                            modeling accessible, helping build resilience to future climate risks. He is also an author
+                            and songwriter.
+                        </p>
+                    </div>
+
+                    <!-- Right Column: Framed Contact Card -->
+                    <div class="researcher-contact-col">
+                        <div class="contact-card-frame">
+                            <div class="researcher-photo-placeholder"
+                                style="margin-bottom: 1.5rem; background-color: var(--bg-cream); border: 1px dashed var(--rule); height: 200px; display: flex; align-items: center; justify-content: center; font-family: var(--font-body); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted);">
+                                [ Researcher Photo Placeholder ]
+                            </div>
+                            <h3 class="contact-card-title">Contact Information</h3>
+                            <div class="contact-card-details">
+                                <div class="contact-row">
+                                    <span class="contact-label">Name</span>
+                                    <span class="contact-value">Daniel Adamu</span>
+                                </div>
+                                <div class="contact-row">
+                                    <span class="contact-label">Title</span>
+                                    <span class="contact-value">Researcher | Lecturer | Actuarial Specialist</span>
+                                </div>
+                                <div class="contact-row">
+                                    <span class="contact-label">Address</span>
+                                    <span class="contact-value">Department of Actuarial Science<br>University of
+                                        Jos<br>Plateau State, Nigeria</span>
+                                </div>
+                                <div class="contact-row">
+                                    <span class="contact-label">Email</span>
+                                    <span class="contact-value"><a href="mailto:adamudaniel@yahoo.com"
+                                            class="email-link">adamudaniel@yahoo.com</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================================================================
+                 FOOTER
+                 =================================================================== -->
+            <footer class="site-footer fullscreen">
+                <div class="footer-inner">
+                    <div class="footer-masthead">Climate Futures</div>
+                    <p class="footer-tagline"
+                        style="margin-bottom: 0.5rem; font-style: normal; font-weight: bold; color: var(--text-inverse);">
+                        A Monte Carlo and Regime-Switching Framework for Smarter Climate Scenario Analysis
+                    </p>
+                    <p class="footer-tagline" style="font-size: 11px; opacity: 0.7; margin-bottom: 1rem;">
+                        Developed from postgraduate research at the University of Jos
+                    </p>
+                    <p class="footer-tagline">
+                        "Exploring thousands of possible climate futures to support better decisions today."
+                    </p>
+                    <hr class="footer-divider">
+                    <p class="footer-copyright">
+                        &copy; 2026 Daniel Adamu. All Rights Reserved.
+                    </p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal for SVG Diagrams -->
+    <div id="lightbox" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Expanded diagram view">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close expanded view">&times;</button>
+        <div class="lightbox-content" id="lightbox-content"></div>
+    </div>
+
+    <!-- Smooth Scroll (Lenis) -->
+    <script src="lenis.min.js"></script>
+    <!-- Custom Script -->
+    <script src="app.js"></script>
+</body>
+
+</html>
